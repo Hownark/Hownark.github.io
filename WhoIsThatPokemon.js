@@ -211,6 +211,7 @@ function pokeSetShow() {
     $("#pokemonImg").empty();
 
     var elem = document.createElement("img");
+    elem.setAttribute("id", "pokemonImg");
     elem.setAttribute("src", "WhoIsThatPokemonImg/Pictures/PokemonsShadow/" + pokeObj.Number + ".png");
     document.getElementById("pokemonImg").appendChild(elem);
     $("#pokeTitle").html("Who is that Pokemon ???")
@@ -271,6 +272,7 @@ function pokeRightShow() {
     } else {
 
     var elem = document.createElement("img");
+    elem.setAttribute("id", "pokemonImg");
     elem.setAttribute("src", "WhoIsThatPokemonImg/Pictures/Pokemons/" + pokeObj.Number + ".png");
     document.getElementById("pokemonImg").appendChild(elem);
     $("#pokeTitle").html("It is .... <br>" + pokeObj.Name + "!!!")

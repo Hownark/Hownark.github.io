@@ -19,40 +19,14 @@
 body{
     background: url('WhoIsThatPokemonImg/BackgroundStart.jpg');  
     margin: 0;
+    min-height: 100%;
     }
 
-    .footer{
-        font-weight: bold;
-        position: absolute;
-        bottom: 3rem;
-        margin: auto;
-        width: 100%;
-        display: flex;
-        justify-content: space-evenly;
-    }
-
-    .showResult {
-        position: absolute;
-        bottom: 8rem;
-        margin: auto;
-        width: 100%;
-        
-    }
+    /***********  HEADER  ************/
 
     .centreGame {
         display: flex;
         justify-content: space-evenly;
-    }
-
-    .centreGameImg {
-        display: flex;
-        justify-content: space-evenly;
-    }
-
-    .centreGameImgPoke {
-        display: flex;
-        justify-content: space-evenly;
-        margin-left: 8rem;
     }
 
     .startPoke {
@@ -63,15 +37,13 @@ body{
         display: none;
     }
 
-    .pokeLife {
-        width: 30px;
-        height: 30px;
+    /***********  MAIN CONTENT  ************/
+
+    .centreGameImg {
+        display: flex;
+        justify-content: space-evenly;
     }
 
-    .pokeLifePos{
-        margin-right: -3rem;
-    }
-    
     .tooltiptext {
         visibility: hidden;
         width: 120px;
@@ -85,13 +57,53 @@ body{
         position: absolute;
         z-index: 1;
         margin-left: 5rem;
-        margin-top: -3rem;
-        
+        margin-top: -3rem;    
     }
 
     .tooltip:hover .tooltiptext {
-        visibility: visible;
-        
+        visibility: visible;     
+    }
+
+    #cronometro {
+        font-size: 50px;
+        font-style: italic;
+        font-weight: bold;
+        color: white;
+    }
+
+    #guessStreak{
+        font-size: 30px;
+        font-style: italic;
+        font-weight: bold;
+        color: white;
+        text-shadow: 2px 2px rgb(23, 252, 15);
+    }
+
+    #pokeTrainer {
+        align-self: flex-end;
+        width: 200px;
+        height: 400px;
+    }
+
+    #pokemonImg{
+        margin-left: 5rem;
+    }
+
+    /***********  ASIDE BUTTONS LIFES...  ************/
+
+    .centreGameImgPoke {
+        display: flex;
+        justify-content: space-evenly;
+        margin-left: 8rem;
+    }
+
+    .pokeLife {
+        width: 30px;
+        height: 30px;
+    }
+
+    .pokeLifePos{
+        margin-right: -3rem;
     }
 
     #next {
@@ -101,6 +113,15 @@ body{
     #playAgain{
         width: 250px;
         display: none;
+    }
+
+    /***********  ASIDE ANSWERS RETURN  ************/
+
+    .showResult {
+        position: absolute;
+        bottom: 8rem;
+        margin: auto;
+        width: 100%;        
     }
 
     #correct {
@@ -119,33 +140,120 @@ body{
         margin-top: 20px;
         font-size: 30px;
         background-color: rgb(0, 243, 243);
-    }  
+    } 
+    
+    /***********  FOOTER  ************/
 
-    #pokeTrainer {
-        align-self: flex-end;
-        width: 200px;
-        height: 400px;
+    .footer{
+        font-weight: bold;
+        position: absolute;
+        bottom: 3rem;
+        margin: auto;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    /****************************  MEDIA ******************************
+     ****************************  QUERY *****************************/
+     @media only screen and (max-width: 700px), screen and (max-height: 400px){
+
+    body{
+        background: url('WhoIsThatPokemonImg/BackgroundStart.jpg');  
+        margin: 0;
+        background-size: 480px 850px;
+    }
+
+    /***********  HEADER  ************/
+
+    .centreGame {
+        display: flex;
+        justify-content: space-evenly;
+    }
+ 
+    .startPoke {
+        display: show;
+        width: 100px;
+        height: 200px;
+    }
+
+    .finalPoke {
+        display: none;
+        width: 100px;
+        height: 200px;
+    }
+
+
+    /***********  MAIN CONTENT  ************/
+
+    .tooltiptext {
+        width: 60px;
+        border-radius: 3px;
+        padding: 2px 0;
+        /* Position the tooltip */
+        z-index: 1;
+        margin-left: 2rem;
+        margin-top: -1.5rem;    
+    }
+
+    .time {
+        margin-left: 2rem;
     }
 
     #cronometro {
-        font-size: 50px;
-        font-style: italic;
-        font-weight: bold;
-        color: white;
-    }
-
-    #pokemonImg{
-        margin-left: 10rem;
+        font-size: 25px;
     }
 
     #guessStreak{
-        font-size: 30px;
-        font-style: italic;
-        font-weight: bold;
-        color: white;
-        text-shadow: 2px 2px rgb(23, 252, 15);
+        font-size: 20px;
+        text-shadow: 1px 1px rgb(23, 252, 15);
     }
 
+    #pokeTrainer {
+        margin-right: -2rem;
+        width: 100px;
+        height: 200px;
+    }
+
+    #pokemonImg{
+        width: 150px;
+        height: 300px;
+        margin: auto;
+    }
+
+    /***********  ASIDE BUTTONS LIFES...  ************/
+
+    .pokeLife {
+        width: 20px;
+        height: 20px;
+    }
+
+    .pokeLifePos{
+        margin-right: -2rem;
+    }
+
+     /***********  ASIDE ANSWERS RETURN  ************/
+
+     .showResult {
+        position: absolute;
+        bottom: 5rem;
+        margin: auto;
+        width: 100%;        
+    }
+
+    /***********  FOOTER  ************/
+
+    .footer{
+        font-weight: bold;
+        position: absolute;
+        bottom: -2rem;
+        margin-left: 2rem;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+}  
 
 
 </style>
