@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+<script src="WhoIsThatPokemon.js"></script>
+
+<style>
+
+body{
+    background: url('WhoIsThatPokemonImg/BackgroundStart.jpg');  
+    margin: 0;
+    }
+
+    .footer{
+        font-weight: bold;
+        position: absolute;
+        bottom: 3rem;
+        margin: auto;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .showResult {
+        position: absolute;
+        bottom: 8rem;
+        margin: auto;
+        width: 100%;
+        
+    }
+
+    .centreGame {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .centreGameImg {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .centreGameImgPoke {
+        display: flex;
+        justify-content: space-evenly;
+        margin-left: 8rem;
+    }
+
+    .startPoke {
+        display: show;
+    }
+
+    .finalPoke {
+        display: none;
+    }
+
+    .pokeLife {
+        width: 30px;
+        height: 30px;
+    }
+
+    .pokeLifePos{
+        margin-right: -3rem;
+    }
+    
+    .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+
+        /* Position the tooltip */
+        position: absolute;
+        z-index: 1;
+        margin-left: 5rem;
+        margin-top: -3rem;
+        
+    }
+
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+        
+    }
+
+    #next {
+        display: none;
+    }
+
+    #playAgain{
+        width: 250px;
+        display: none;
+    }
+
+    #correct {
+        margin-top: 20px;
+        font-size: 30px;
+        background-color: darkolivegreen;
+    }
+
+    #tryAgain {
+        margin-top: 20px;
+        font-size: 30px;
+        background-color: yellow;
+    } 
+
+    #pokeMaster {
+        margin-top: 20px;
+        font-size: 30px;
+        background-color: rgb(0, 243, 243);
+    }  
+
+    #pokeTrainer {
+        align-self: flex-end;
+        width: 200px;
+        height: 400px;
+    }
+
+    #cronometro {
+        font-size: 50px;
+        font-style: italic;
+        font-weight: bold;
+        color: white;
+    }
+
+    #pokemonImg{
+        margin-left: 10rem;
+    }
+
+    #guessStreak{
+        font-size: 30px;
+        font-style: italic;
+        font-weight: bold;
+        color: white;
+        text-shadow: 2px 2px rgb(23, 252, 15);
+    }
+
+
+
+</style>
+
+<body>
+
+
+    <header class="centreGame">
+        <h2 id="pokeTitle" class="startPoke"></h2>
+    </header>
+
+        
+    <main class="centreGameImg">
+
+        <div class="time">
+            <h3 style="color: white">Timer :</h3>
+            <span id="cronometro"></span><hr/>
+            <div class="tooltip">
+            <h3 style="color: white; font-weight: bold; text-shadow: 2px 2px rgb(23, 252, 15)">Streak</h3>
+            <span class="tooltiptext">For every 20 right answer in a streak, you regain a life</span>
+            <span id="guessStreak">0</span>
+            </div>
+        </div>
+
+        <div id="pokemonImg" class="startPoke"></div>
+
+
+        <img id="pokeTrainer"src="WhoIsThatPokemonImg/pokeTrainer1.png">
+
+
+    </main>    
+
+    <aside class="centreGameImgPoke">
+        
+        <div></div>
+
+       <div>
+           <input type="text"  id="shot" placeholder="Who is that Pokemon ?">
+           <button id="butao" type="button">Guess It</button>
+           <button id="next" type="button">Next</button>
+           <button id="playAgain" type="button">Play Again</button>
+        </div>
+
+       <div class="pokeLifePos">
+            <img class="pokeLife" id="life1" style="display: show" src="WhoIsThatPokemonImg/pokeLife.png">
+            <img class="pokeLife" id="life2" style="display: show" src="WhoIsThatPokemonImg/pokeLife.png">
+            <img class="pokeLife" id="life3" style="display: show" src="WhoIsThatPokemonImg/pokeLife.png">
+            <img class="pokeLife" id="life4" style="display: show" src="WhoIsThatPokemonImg/pokeLife.png">
+            <img class="pokeLife" id="life5" style="display: show" src="WhoIsThatPokemonImg/pokeLife.png">
+       </div>
+    </aside>
+
+    <aside class="showResult">
+        <span id="correct" class="centreGame"></span>
+        <span id="tryAgain" class="centreGame"></span>
+        <span id="pokeMaster" class="centreGame"></span>
+    </aside>
+
+    <footer class="footer">
+
+        <div>
+            <span id="rightAnswer" class="footerOpt">Right answers: 0</span>
+        </div>
+        <div>    
+            <span id="howMany" class="footerOpt">How many left to become the Pokemaster: 151</span>
+        </div>
+        <div>
+            <span id="lastPoke" class="footerOpt">Last Pokemon:</span>
+        </div>
+
+    </footer>
+    
+
+</body>
+</html>
