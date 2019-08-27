@@ -16,10 +16,18 @@
 
 <style>
 
-body{
-    background: url('WhoIsThatPokemonImg/BackgroundStart.jpg');  
-    margin: 0;
-    min-height: 100%;
+ 
+
+    @media (min-width: 20rem), (min-width: 24rem), (min-width: 26rem), (min-width: 36rem), (min-width: 48rem), (min-width: 62rem), (min-width: 75rem) {
+
+    body{
+        background: url('WhoIsThatPokemonImg/BackgroundStart.jpg');  
+        margin: 0;
+    }      
+
+    img {
+        max-width: 100%;
+        height: auto;
     }
 
     /***********  HEADER  ************/
@@ -79,12 +87,6 @@ body{
         text-shadow: 2px 2px rgb(23, 252, 15);
     }
 
-    #pokeTrainer {
-        align-self: flex-end;
-        width: 200px;
-        height: 400px;
-    }
-
     #pokemonImg{
         margin-left: 5rem;
     }
@@ -95,11 +97,6 @@ body{
         display: flex;
         justify-content: space-evenly;
         margin-left: 8rem;
-    }
-
-    .pokeLife {
-        width: 30px;
-        height: 30px;
     }
 
     .pokeLifePos{
@@ -154,105 +151,8 @@ body{
         justify-content: space-evenly;
     }
 
-    /****************************  MEDIA ******************************
-     ****************************  QUERY *****************************/
-     @media only screen and (max-width: 700px){
-
-    body{
-        background: url('WhoIsThatPokemonImg/BackgroundStart.jpg');  
-        margin: 0;
-    }
-
-    /***********  HEADER  ************/
-
-    .centreGame {
-        display: flex;
-        justify-content: space-evenly;
-    }
+}
  
-    .startPoke {
-        display: show;
-        width: 100px;
-        height: 200px;
-    }
-
-    .finalPoke {
-        display: none;
-        width: 100px;
-        height: 200px;
-    }
-
-
-    /***********  MAIN CONTENT  ************/
-
-    .tooltiptext {
-        width: 60px;
-        border-radius: 3px;
-        padding: 2px 0;
-        /* Position the tooltip */
-        z-index: 1;
-        margin-left: 2rem;
-        margin-top: -1.5rem;    
-    }
-
-    .time {
-        margin-left: 2rem;
-    }
-
-    #cronometro {
-        font-size: 25px;
-    }
-
-    #guessStreak{
-        font-size: 20px;
-        text-shadow: 1px 1px rgb(23, 252, 15);
-    }
-
-    #pokeTrainer {
-        margin-right: -2rem;
-        width: 100px;
-        height: 200px;
-    }
-
-    #pokemonImg{
-        width: 150px;
-        height: 300px;
-        margin: auto;
-    }
-
-    /***********  ASIDE BUTTONS LIFES...  ************/
-
-    .pokeLife {
-        width: 20px;
-        height: 20px;
-    }
-
-    .pokeLifePos{
-        margin-right: -2rem;
-    }
-
-     /***********  ASIDE ANSWERS RETURN  ************/
-
-     .showResult {
-        position: absolute;
-        bottom: 5rem;
-        margin: auto;
-        width: 100%;        
-    }
-
-    /***********  FOOTER  ************/
-
-    .footer{
-        font-weight: bold;
-        position: absolute;
-        bottom: -2rem;
-        margin-left: 2rem;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-    }
-
-}  
 
 
 </style>
@@ -280,7 +180,7 @@ body{
         <div id="pokemonImg" class="startPoke"></div>
 
 
-        <img id="pokeTrainer"src="WhoIsThatPokemonImg/pokeTrainer1.png">
+        <img id="pokeTrainer" src="WhoIsThatPokemonImg/Poketrainer1.png">
 
 
     </main>    
